@@ -100,16 +100,16 @@ class LinkedList {
   // The node of index 0 must point towards the new node of index 1
   // The new node of index 1 must point towards the previous node of index 1
   insertAt(value, index) {
-    let newNode = new Node(value);
+    const newNode = new Node(value);
     if (index === 0) {
-      newNode.nextNode = this.listhead
-      this.listhead = newNode
+      newNode.nextNode = this.listhead;
+      this.listhead = newNode;
     }
 
     let tmp = this.listhead;
     for (let i = 0; i < index - 1; i++) tmp = tmp.nextNode;
-    let previousNode = tmp;
-    let indexNode = tmp.nextNode;
+    const previousNode = tmp;
+    const indexNode = tmp.nextNode;
 
     previousNode.nextNode = newNode;
     newNode.nextNode = indexNode;
@@ -129,10 +129,10 @@ class LinkedList {
 
     let tmp = this.listhead;
     for (let i = 0; i < index - 1; i++) tmp = tmp.nextNode;
-    let previousNode = tmp;
-    let nodeAfterTheIndex = tmp.nextNode.nextNode;
+    const previousNode = tmp;
+    const nodeAfterTheIndex = tmp.nextNode.nextNode;
 
     previousNode.nextNode = nodeAfterTheIndex;
   }
- }
+}
 export default LinkedList;
