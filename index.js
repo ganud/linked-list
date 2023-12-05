@@ -6,6 +6,6 @@ linkedlist.append('first');
 
 linkedlist.append('last');
 
-console.log(linkedlist.insertAt("fort", 2));
+console.log(linkedlist.removeAt(2))
 console.log(linkedlist.toString())
 

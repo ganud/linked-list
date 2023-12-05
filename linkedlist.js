@@ -101,6 +101,10 @@ class LinkedList {
   // The new node of index 1 must point towards the previous node of index 1
   insertAt(value, index) {
     let newNode = new Node(value);
+    if (index === 0) {
+      newNode.nextNode = this.listhead
+      this.listhead = newNode
+    }
 
     let tmp = this.listhead;
     for (let i = 0; i < index - 1; i++) tmp = tmp.nextNode;
@@ -110,5 +114,25 @@ class LinkedList {
     previousNode.nextNode = newNode;
     newNode.nextNode = indexNode;
   }
-}
+
+  // lets say I want to remove index 2.
+  // index 1 should now point to index 3
+
+  // lets say I want to remove index 0
+  // Index 1 should now be index 0
+  // That is to say index 1 is now the head
+  removeAt(index) {
+    if (index === 0) {
+      this.listhead = this.listhead.nextNode;
+      return;
+    }
+
+    let tmp = this.listhead;
+    for (let i = 0; i < index - 1; i++) tmp = tmp.nextNode;
+    let previousNode = tmp;
+    let nodeAfterTheIndex = tmp.nextNode.nextNode;
+
+    previousNode.nextNode = nodeAfterTheIndex;
+  }
+ }
 export default LinkedList;
