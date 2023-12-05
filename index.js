@@ -1,10 +1,11 @@
 import LinkedList from './linkedlist.js';
 
 const linkedlist = new LinkedList();
-linkedlist.append('lat');
-linkedlist.append('lat');
+linkedlist.append('zero');
+linkedlist.append('first');
 
 linkedlist.append('last');
 
-console.log(linkedlist.toString());
+console.log(linkedlist.insertAt("fort", 2));
+console.log(linkedlist.toString())
 

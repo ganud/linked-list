@@ -94,5 +94,21 @@ class LinkedList {
     string = `${string} -> null`;
     return string;
   }
+
+  // lets say we want a node at index 1
+  // The previous node of index 1 is unchanged
+  // The node of index 0 must point towards the new node of index 1
+  // The new node of index 1 must point towards the previous node of index 1
+  insertAt(value, index) {
+    let newNode = new Node(value);
+
+    let tmp = this.listhead;
+    for (let i = 0; i < index - 1; i++) tmp = tmp.nextNode;
+    let previousNode = tmp;
+    let indexNode = tmp.nextNode;
+
+    previousNode.nextNode = newNode;
+    newNode.nextNode = indexNode;
+  }
 }
 export default LinkedList;
