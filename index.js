@@ -1,9 +1,10 @@
 import LinkedList from './linkedlist.js';
 
 const linkedlist = new LinkedList();
-linkedlist.append('hfaasasi');
-linkedlist.append('hi');
+linkedlist.append('lat');
+linkedlist.append('lat');
 
 linkedlist.append('last');
 
-console.log(linkedlist.tail());
+console.log(linkedlist.toString());
+
